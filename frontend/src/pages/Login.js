@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Axios from 'axios';
-import Header from '../components/Header';
+import './Login.css'
+
 function Login() {
   const[fname,setFname] = useState("");
   const[lname,setLname] = useState("");
@@ -28,7 +29,7 @@ function Login() {
   
     <>
  
-    <form className='container' onSubmit={addUser} >
+    <form className='container_login' onSubmit={addUser} >
       <div class="mb-3">
         <h1>Create Account</h1>
       </div>

@@ -1,9 +1,17 @@
-.container {
-  max-width: 500px;
-  margin: 30px auto;
-  overflow: auto;
-  min-height: 300px;
-  border: 1px solid steelblue;
-  padding: 30px;
-  border-radius: 5px;
+
+
+.navbar-brand{
+  margin-left: 20px;
 }
+.navbar{
+  background:white !important;
+  height: 80px !important;
+}
+
+.bueyer{
+  margin-top: 200px;
+}
+
+
+
+
