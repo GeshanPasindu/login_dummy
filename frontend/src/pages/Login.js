@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-
+import Axios from 'axios';
+import Header from '../components/Header';
 function Login() {
   const[fname,setFname] = useState("");
   const[lname,setLname] = useState("");
@@ -7,13 +8,29 @@ function Login() {
   const[email,setEmail] = useState("");
   const[password,setPassword] =useState("");
 
-  const onSubmit=( ) =>{
-    console.log(fname,lname,bday,email,password)
-  }
+  const addUser = () =>{
+    Axios.post('http://localhost:4000/users/register',{
+
+                First_name: fname,
+                Last_name:lname,
+                Birthday:bday,
+                Email: email,
+                Password:password
+
+    }).then((response) =>{
+      console.log(response)
+    });
+
+  };
+
+  
   return (
-    <form className='container' >
+  
+    <>
+ 
+    <form className='container' onSubmit={addUser} >
       <div class="mb-3">
-        <h1>Registration</h1>
+        <h1>Create Account</h1>
       </div>
        <div class="mb-3">
     <label class="form-label">Firtst Name</label>
@@ -38,6 +55,7 @@ function Login() {
   </div>
   <button type="submit" class="btn btn-primary"id="submit-button">Submit</button>
 </form>
+</>
   )
 }
 
