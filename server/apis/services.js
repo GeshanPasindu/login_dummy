@@ -29,11 +29,11 @@ module.exports ={
             [
                 email
             ],
-            (err,result) =>{
+            (err,result,fields) =>{
                 if(err){
                     return cb(err);
                 }
-                return cb(null,result);
+                return cb(null,result[0]);
             }
         )
 
