@@ -1,4 +1,4 @@
-const{createAccount} = require("./services")
+const{createAccount,getByEmail} = require("./services")
 const{genSaltSync,hashSync} = require('bcrypt')
 
 module.exports={
@@ -16,5 +16,9 @@ module.exports={
 
         });
 
+    },
+    logIn: (req,res) =>{
+
     }
+
 };

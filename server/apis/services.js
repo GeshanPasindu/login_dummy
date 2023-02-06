@@ -2,7 +2,7 @@ const connect = require("../database");
 
 module.exports ={
     createAccount:(body,callBack) =>{
-        console.log(body);
+        
         connect.query(
             `INSERT INTO user (First_name,Last_name,Birthday,Email,Password)
             values(?,?,?,?,?)  `,
@@ -21,6 +21,22 @@ module.exports ={
                 return callBack(null,result);
             }
         )
+
+    },
+    getByEmail:(email,cb) =>{
+        connect.query(
+            `SELECT * FROM user WHERE Email = ?`,
+            [
+                email
+            ],
+            (err,result) =>{
+                if(err){
+                    return cb(err);
+                }
+                return cb(null,result);
+            }
+        )
+
 
     }
 }
