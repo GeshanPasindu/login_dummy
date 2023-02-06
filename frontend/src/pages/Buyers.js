@@ -4,7 +4,10 @@ import Sidebar from '../components/Sidebar'
 function Buyers() {
   return (
     <div className='buyer'>
-        buyer
+      <Sidebar>
+      buyer
+      </Sidebar>
+        
     </div>
   )
 }

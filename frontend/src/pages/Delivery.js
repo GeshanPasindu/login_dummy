@@ -4,7 +4,9 @@ import Sidebar from '../components/Sidebar'
 function Delivery() {
   return (
     <div>
-        
+        <Sidebar>
+          DeliveryPartners
+        </Sidebar>
     </div>
   )
 }

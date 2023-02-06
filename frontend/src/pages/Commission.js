@@ -4,7 +4,9 @@ import Sidebar from '../components/Sidebar'
 function Commission() {
   return (
     <div>
-        
+       <Sidebar>
+        Commission
+        </Sidebar> 
     </div>
   )
 }

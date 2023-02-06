@@ -1,10 +1,12 @@
 import React from 'react'
+import Sidebar from '../components/Sidebar'
 import './Dashboard.css'
 
 
 const Dashboard = () => {
   return (
     <div>
+     <Sidebar>
       <div class="container text-center">
   <div class="row">
     <div class="col">
@@ -49,6 +51,7 @@ const Dashboard = () => {
 
   </div>
 </div>
+</Sidebar>
 
     </div>
   )
