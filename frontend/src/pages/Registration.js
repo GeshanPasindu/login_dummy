@@ -10,7 +10,7 @@ function Registration() {
   const[password,setPassword] =useState("");
 
   const addUser = (e) =>{
-    e.preventdefault();
+    e.preventDefault();
     Axios.post('http://localhost:4000/users/register',{
 
                 First_name: fname,

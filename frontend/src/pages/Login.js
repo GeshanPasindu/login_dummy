@@ -1,11 +1,22 @@
+import  Axios  from 'axios';
 import React, { useState } from 'react'
 
 function Login() {
     const[email,setEmail] =useState("");
     const[password,setPassword] = useState("");
+    const userLogin = (e) =>{
+      e.preventDefault();
+      Axios.post("http://localhost:4000/users/login",{
+        email: email,
+        Password: password
+      }).then((response) =>{
+        console.log(response)
+
+      });
+    }
   return (
     <div>
-        <form className='container_login'>
+        <form className='container_login'onSubmit={userLogin}>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={(e) =>{setEmail(e.target.value)}}/>
