@@ -31,7 +31,7 @@ module.exports={
             if(!results){
                 return res.json({
                     success: 0,
-                    data: "no matching result!"
+                    message: "no matching result!"
                 });
             }
             const compare =compareSync(body.Password,results.Password);
@@ -48,7 +48,7 @@ module.exports={
             }else{
                 return res.json({
                     success: 0,
-                    data: "Invalid  Password"
+                    message: "Invalid  Password"
 
                 });
             }

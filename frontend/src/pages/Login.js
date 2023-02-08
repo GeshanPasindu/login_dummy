@@ -1,17 +1,30 @@
 import  Axios  from 'axios';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Cookies from 'universal-cookie'
+
 
 function Login() {
     const[email,setEmail] =useState("");
     const[password,setPassword] = useState("");
+    const[message,setMessage] =useState("");
+    const navigate = useNavigate();
+    const token= new Cookies();
     const userLogin = (e) =>{
       e.preventDefault();
       Axios.post("http://localhost:4000/users/login",{
         email: email,
         Password: password
       }).then((response) =>{
-        console.log(response)
+        console.log(response.data);
+        token.set("jwt",response.data.token);
+        if(response.data.success === 1){
+          // navigate("/Dashboard")
+          console.log(token.get("jwt"))
 
+        }else{
+          setMessage(response.data.message);
+        }
       });
     }
   return (
@@ -28,7 +41,11 @@ function Login() {
   </div>
   
   <button type="submit" class="btn btn-primary">Login</button>
+  <h1>{message}</h1>
 </form>
+
+  
+
     </div>
   )
 }

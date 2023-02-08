@@ -38,5 +38,20 @@ module.exports ={
         )
 
 
+    },
+    getUser:(cb) =>{
+        connect.query(
+            `SELECT * FROM user WHERE Email = ?`,
+            
+            (err,result,fields) =>{
+                if(err){
+                    return cb(err);
+                }
+                return cb(null,result[0]);
+            }
+        )
+
+
     }
+
 }
