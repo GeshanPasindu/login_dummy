@@ -1,4 +1,4 @@
-const{createAccount,getByEmail} = require("./services")
+const{createAccount,getByEmail,getUser} = require("./services")
 const{genSaltSync,hashSync, compareSync} = require('bcrypt');
 const { sign } = require("jsonwebtoken");
 
@@ -56,6 +56,25 @@ module.exports={
         });
         
 
+
+
+    },
+
+    getUserData: (req,res) =>{
+        getUser((err,results) =>{
+
+            if(err){
+                console.log(err);
+                return res.json({
+                    message : "error occured in Database"
+                });
+            }
+            return res.json({
+                success: 1,
+                Data:results
+            });
+
+        });
 
 
     }

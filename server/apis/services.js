@@ -41,13 +41,13 @@ module.exports ={
     },
     getUser:(cb) =>{
         connect.query(
-            `SELECT * FROM user WHERE Email = ?`,
+            `SELECT First_name,Last_name,Birthday,Email FROM user`,
             
             (err,result,fields) =>{
                 if(err){
                     return cb(err);
                 }
-                return cb(null,result[0]);
+                return cb(null,result);
             }
         )
 

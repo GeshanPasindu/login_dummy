@@ -19,7 +19,7 @@ function Login() {
         console.log(response.data);
         token.set("jwt",response.data.token);
         if(response.data.success === 1){
-          // navigate("/Dashboard")
+          navigate("/Dashboard")
           console.log(token.get("jwt"))
 
         }else{

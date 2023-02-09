@@ -1,10 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Sidebar from '../components/Sidebar'
 import './Dashboard.css'
+import Axios from 'axios'
+import Cookies from 'universal-cookie'
 
 
 const Dashboard = () => {
-  
+  const [user,setUser] = useState([]);
+  let cookie = new Cookies();
+  useEffect(() =>{
+    Axios.get("http://localhost:4000/users/getusers",{
+      headers:{
+        autherization: `Bearer ${cookie.get("jwt")}`
+      }
+    }).then((reponse) =>{
+      setUser(reponse.data.Data)
+
+    })
+
+    
+  },[])
   return (
     <div>
      <Sidebar>
@@ -52,6 +67,16 @@ const Dashboard = () => {
 
   </div>
 </div>
+<div>
+  {  
+    user.map((data,index) =>(
+      <h3 key={index}>{data.Email}</h3>
+    )
+
+  )
+  }
+</div>
+
 </Sidebar>
 
     </div>
