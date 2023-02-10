@@ -1,6 +1,6 @@
 import  Axios  from 'axios';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Cookies from 'universal-cookie'
 
 
@@ -41,7 +41,8 @@ function Login() {
   </div>
   
   <button type="submit" class="btn btn-primary">Login</button>
-  <h1>{message}</h1>
+  <Link to='/Register'><h5>Create account</h5></Link>
+  <h4>{message}</h4>
 </form>
 
   
