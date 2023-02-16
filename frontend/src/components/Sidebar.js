@@ -68,10 +68,11 @@ const Sidebar = ({children}) => {
           <a class="nav-link " aria-current="page" href="#">Home</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
+
+      {/* <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      </form> */}
     </div>
   </div>
 </nav>
