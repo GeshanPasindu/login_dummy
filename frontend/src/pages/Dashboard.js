@@ -9,17 +9,13 @@ const Dashboard = () => {
   const [user,setUser] = useState([]);
   let cookie = new Cookies();
   useEffect(() =>{
-    Axios.get("http://localhost:4000/users/getusers",{
-      headers:{
-        autherization: `Bearer ${cookie.get("jwt")}`
-      }
-    }).then((reponse) =>{
-      setUser(reponse.data.Data)
-
+    Axios.get("http://localhost:5000/Admin/getcommission"
+    ).then((response) =>{
+      console.log(response)
+    }).catch((error) =>{
+      console.log(error)
     })
-
-    
-  },[])
+  })
   return (
     <div>
      <Sidebar>
