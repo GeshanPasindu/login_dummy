@@ -15,7 +15,8 @@ const Dashboard = () => {
     }).catch((error) =>{
       console.log(error)
     })
-  })
+  
+    },[])
   return (
     <div>
      <Sidebar>
